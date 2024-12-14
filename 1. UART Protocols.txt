@@ -1,0 +1,65 @@
+1. UART Protocols
+UART stands for Universal Asynchronous Receiver Transmitter (UART) and is perhaps the most simplified, oldest and most commonly used form of device-to-device communication.
+
+As the name implies, UART uses asynchronous serial communication, which means that no clock signal is used to synchronise data between the transmitter and receiving devices. So, unlike the majority of protocols, UART data transmission follows TX-RX/Transmitter/receiver pin communication connected through two wires.
+
+UART adds stop and start bits to detect incoming data.  Here, device communication speed must follow around the same baud rate configuration in beats per second (bps) to send and receive data transmission packets.
+
+UART can be configured in three distinct ways:
+
+Simplex: One-way data Communication.
+Full-Duplex: Simultaneous data transmission in both directions at the same time.
+UART Pros
+Only uses two wires to connect
+Popular and commonly used protocol
+ Asynchronous meaning no clock signal is needed
+Simple structure means data packets can be easily changed
+Multiple ways for configuration
+UART Cons
+With one master and slave, UART doesn’t support multiple systems
+Baud rate configuration needs to be similar
+2. SPI Protocols
+SPI refers to Serial Peripheral Interface and is a famous communication protocol within the embedded world. The SPI protocol is used across a range of chipsets, including SD card and RFID card reader modules. Its essential function as an interface Bus is to send/receive data across Microcontrollers (Master) and Peripherals such as sensors and SD cards (Slaves) to assist device communication.
+
+SPI follows a Serial Communication Protocol with a Full-Duplex configuration, meaning data bits can be transmitted continuously in both directions at the same time through Master-Slave-IN/ Master-Slave-Out (MOSI/MISO) exchange.
+
+This holds an advantage over stop/start bit communication, as devices can function without interruption. The overall operation of SPI involves four signals.
+
+The Serial Clock (SCLK) assists a synchronous interface, allowing faster data transfer.
+The Master node commands Master In Slave Out (MISO) or Maser Out Slave In (MOSI) communication.
+The Slave Select lines (SS) indicate activity; when a line goes low, communication is present between the Master and a Slave Node.
+This enables higher speeds-16Mhz-32Mhz- of data transmission than other Protocols.
+Though SPI holds a higher transfer rate than other multi-slave systems, the one Master to multiple-slave nature of SPI means it is not scalable as multiple wire interfaces are needed to establish Master/Slave transmission amongst the Bus. This should be held as a consideration when contemplating the complexity of a system.
+
+SPI Pros
+Flexibility for bits transferred
+Can support multi-master-slave systems
+High speed – faster than asynchronous methods
+Continuous transmission of data bits means less interruption
+SPI Cons
+Not as scalable as other multi-slave systems
+More wires are required for communication
+One master controls all slave communication
+3. I2C Protocols
+I2C means Intern-Integrated Circuit and was first created by Phillips to power electrical lighting. I2C communication is popular due to its Multi-Master-Multi-Slave structure, otherwise known as an I2C Bus. Such structure is valuable when registering multiple Microcontrollers data to power a device system.
+
+I2C has varying applications, particularly in IC circuits like LCD Modules, Temperatures Sensors, and Data Acquisition, etc., making it a common Protocol used by embedded engineers.
+
+The I2C communication protocol follows a Half-Duplex configuration, which means data can be transferred bit by bit via two-way communication at a single time. This should be taken into consideration when contemplating integration, as data communication happens at a lower rate.
+
+Like SPI and UART, I2C follows a Serial Communication Protocol enabling two-wire interface communication between masters and slaves.  Having a less complex pin structure, I2C is attractive to integrate.
+
+In an I2C Bus, Multiple Master and Salve device communication works via Synchronous Communication, where a clock signal controlled by the master is distributed amongst the salve nodes across two-wire interfaces, the Serial Clock Line (SCL) and Serial Data Line (SDA). When integrating I2C use cases need to be evaluated as it is more complex than most other Protocols.
+
+I2C Pros
+Cheaper cost to integrate than other communication protocols,
+Flexible- the multi-master-slave design makes I2C much more functional
+Adaptable to integrated circuit types,
+I2C Cons
+Lower transmission speeds,
+It is considered complex, especially as the number of devices used increases.
+
+can disadvantages:
+
+supports upto 64 nodes due to electrical loading.
+➨It supports maximum length of 40 meters.
